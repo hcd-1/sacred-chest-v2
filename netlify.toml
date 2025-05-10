@@ -1,0 +1,23 @@
+[build]
+  # Serve static files from the public/ directory
+  publish = "public"
+  command = ""
+
+[functions]
+  directory = "functions"
+
+[build.environment]
+  SUPABASE_URL = "your-supabase-url"
+  SUPABASE_ANON_KEY = "your-supabase-anon-key"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/.netlify/functions/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type"

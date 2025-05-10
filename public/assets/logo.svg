@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <!-- <circle cx="250" cy="250" r="220" fill="#4A90E2" /> -->
+  <!-- Definitions for Gradients -->
+  <defs>
+        <style>
+            @import url("https://fonts.googleapis.com/css?family=Fugaz+One:400,400i,700,700i");
+        </style>
+    </defs>
+  <defs>
+    <!-- Radial Gradient for the Background Circle -->
+    <radialGradient id="circleGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#4895BB" /> <!-- Blue -->
+      <!-- <stop offset="100%" stop-color="#6D28D9" /> Purple -->
+    </radialGradient>
+  </defs>
+  
+  <!-- Background Circle with Gradient -->
+  <circle cx="250" cy="250" r="220" fill="url(#circleGradient)" />
+  
+
+
+  <!-- Chest Base -->
+  <rect x="140" y="180" width="220" height="180" rx="20" fill="#D68A5E" />
+  
+  <!-- Chest Lid -->
+  <path d="M140,180 Q250,130 360,180" stroke="#D68A5E" stroke-width="35" fill="none" />
+  
+ <!-- Glowing Rays (16 Angles, Including Overlapping Rays at 0°, 90°, 180°, 270°) -->
+    <g opacity="0.4" stroke="#FFBB94" stroke-width="5" stroke-linecap="round">
+      <!-- 0° (Overlapping Cross Beam, 125 units) -->
+      <!-- <line x1="250" y1="190" x2="375" y2="190" /> -->
+      <!-- 22.5° -->
+      <line x1="250" y1="190" x2="365.49" y2="142.16" />
+      <!-- 45° -->
+      <line x1="250" y1="190" x2="338.38" y2="101.63" />
+      <!-- 67.5° -->
+      <line x1="250" y1="190" x2="297.84" y2="74.51" />
+      <!-- 90° (Overlapping Cross Beam, 125 units) -->
+      <!-- <line x1="250" y1="190" x2="250" y2="65" /> -->
+      <!-- 112.5° -->
+      <line x1="250" y1="190" x2="202.16" y2="305.49" />
+      <!-- 135° -->
+      <line x1="250" y1="190" x2="161.63" y2="278.38" />
+      <!-- 157.5° -->
+      <line x1="250" y1="190" x2="134.51" y2="237.84" />
+      <!-- 180° (Overlapping Cross Beam, 125 units) -->
+      <!-- <line x1="250" y1="190" x2="125" y2="190" /> -->
+      <!-- 202.5° -->
+      <line x1="250" y1="190" x2="134.51" y2="142.16" />
+      <!-- 225° -->
+      <line x1="250" y1="190" x2="161.63" y2="101.63" />
+      <!-- 247.5° -->
+      <line x1="250" y1="190" x2="202.16" y2="74.51" />
+      <!-- 270° (Overlapping Cross Beam, 125 units) -->
+      <!-- <line x1="250" y1="190" x2="250" y2="315" /> -->
+      <!-- 292.5° -->
+      <line x1="250" y1="190" x2="297.84" y2="305.49" />
+      <!-- 315° -->
+      <line x1="250" y1="190" x2="338.38" y2="278.38" />
+      <!-- 337.5° -->
+      <line x1="250" y1="190" x2="365.49" y2="237.84" />
+    </g>
+
+    <!-- Glowing Rays (16 Angles, Including Overlapping Rays at 0°, 90°, 180°, 270°) -->
+    <g opacity="0.4" stroke="#FFBB94" stroke-width="5" stroke-linecap="round">
+      <!-- 0° (Overlapping Cross Beam, 125 units) -->
+      <line x1="250" y1="190" x2="390" y2="190" />
+    
+      <!-- 90° (Overlapping Cross Beam, 125 units) -->
+      <line x1="250" y1="190" x2="250" y2="50" />
+     
+      <!-- 180° (Overlapping Cross Beam, 125 units) -->
+      <line x1="250" y1="190" x2="110" y2="190" />
+    
+      <!-- 270° (Overlapping Cross Beam, 125 units) -->
+      <line x1="250" y1="190" x2="250" y2="320" />
+     
+    </g>
+  
+  <!-- Cross (with horizontal beam at Y=190) -->
+  <path d="M250,120 L250,360 M170,190 L330,190" stroke="white" stroke-width="18" stroke-linecap="square" />
+  
+  <!-- Text -->
+  <text x="250" y="420" font-family="'Fugaz One', sans-serif" font-size="50" font-weight="400" text-anchor="middle" fill="white">Sacred Chest</text>
+</svg>

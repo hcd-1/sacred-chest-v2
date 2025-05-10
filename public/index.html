@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sacred Chest</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="index.css"> 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fugaz+One:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
+ 
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="container header-container">
+        <div class="logo-container">
+          <img src="assets/logo.svg" alt="Sacred Chest Logo" class="logo-img">
+          <div class="logo">Sacred Chest</div>
+        </div>
+        <div class="header-actions">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="sun-icon"></span>
+            <span class="moon-icon"></span>
+          </button>
+          <button id="hamburger-toggle" class="hamburger-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="hamburger-menu">
+            <span class="hamburger-icon">
+              <span></span>
+            </span>
+          </button>
+        </div>
+      </div>
+      <nav id="hamburger-menu" class="hamburger-menu" role="navigation" hidden>
+        <div class="hamburger-menu-content">
+          <div class="track-dropdown">
+            <button class="dropdown-toggle primary-button" aria-expanded="false" aria-label="Select verse track">
+              <span class="dropdown-text">Track 1</span>
+              <span class="dropdown-arrow"></span>
+            </button>
+            <ul class="dropdown-menu" hidden></ul>
+          </div>
+          <a class="icon-button external-link" href="https://sacred-chest-original.netlify.app" target="_blank" rel="noopener" aria-label="Visit other Bible verse app">
+            <span class="external-link-icon"></span>
+          </a>
+          <button class="icon-button settings" disabled aria-label="Settings coming soon" aria-disabled="true">
+            <span class="settings-icon"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="date-track-container">
+          <div class="date-display">
+            <button class="calendar-button" id="open-calendar" aria-label="Toggle calendar">
+              <span class="calendar-icon"></span>
+            </button>
+            <span id="current-date"></span>
+            <div id="calendar-container" class="calendar-container">
+              <button id="calendar-close" class="calendar-close" aria-label="Close calendar">
+                <span class="icon x-icon"></span>
+              </button>
+              <div class="calendar-header">
+                <div class="calendar-title-container">
+                  <button id="prev-month" class="calendar-nav-button" aria-label="Previous month">
+                    <span class="icon arrow-left-icon"></span>
+                  </button>
+                  <div class="calendar-title" id="calendar-title"></div>
+                  <button id="next-month" class="calendar-nav-button" aria-label="Next month">
+                    <span class="icon arrow-right-icon"></span>
+                  </button>
+                </div>
+              </div>
+              <div class="calendar-grid" role="grid" aria-label="Calendar">
+                <div class="calendar-weekday" role="columnheader">Sun</div>
+                <div class="calendar-weekday" role="columnheader">Mon</div>
+                <div class="calendar-weekday" role="columnheader">Tue</div>
+                <div class="calendar-weekday" role="columnheader">Wed</div>
+                <div class="calendar-weekday" role="columnheader">Thu</div>
+                <div class="calendar-weekday" role="columnheader">Fri</div>
+                <div class="calendar-weekday" role="columnheader">Sat</div>
+              </div>
+              <div class="calendar-footer">
+                <button id="today-button" class="button">Today</button>
+              </div>
+            </div>
+          </div>
+          <div class="track-indicator">
+            <div class="track-dropdown">
+              <button class="dropdown-toggle primary-button" aria-expanded="false" aria-label="Select verse track">
+                <span class="dropdown-text">Track 1</span>
+                <span class="dropdown-arrow"></span>
+              </button>
+              <ul class="dropdown-menu" hidden></ul>
+            </div>
+            <a class="icon-button favourites-link" href="/favourites.html" target="_blank" rel="noopener" aria-label="Visit other Bible verse app">
+              <span class="heart-icon"></span>
+            </a>
+            <a class="icon-button external-link" href="https://sacred-chest-original.netlify.app" target="_blank" rel="noopener" aria-label="Visit other Bible verse app">
+              <span class="external-link-icon"></span>
+            </a>
+            <button class="icon-button settings" disabled aria-label="Settings coming soon" aria-disabled="true">
+              <span class="settings-icon"></span>
+            </button>
+          </div>
+        </div>
+        <div class="main-grid">
+          <div class="card main-verse-card">
+            <div class="card-header">
+              <div class="verse-reference" id="daily-verse-reference">Loading...</div>
+              <div class="card-label" id="daily-label">Daily</div>
+            </div>
+            <div class="card-content">
+              <div id="daily-verse">
+                <div class="spinner" id="daily-spinner"></div>
+                <blockquote id="daily-verse-content" class="verse-text">Loading daily verse...</blockquote>
+              </div>
+            </div>
+            <div class="card-footer">
+              <button class="button outline-button">
+                <span class="share-icon"></span>
+                <span>Share</span>
+              </button>
+              <button class="icon-button" data-card="daily" aria-label="Favorite">
+                <span class="heart-icon"></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="secondary-grid">
+            <div class="card">
+              <div class="card-header">
+                <div class="verse-reference" id="odd-even-verse-reference">Loading...</div>
+                <div class="card-label" id="odd-even-label"></div>
+              </div>
+              <div class="card-content">
+                <div id="odd-even-verse">
+                  <div class="spinner" id="odd-even-spinner"></div>
+                  <blockquote id="odd-even-verse-content" class="small-verse-text">Loading odd/even verse...</blockquote>
+                </div>
+              </div>
+              <div class="card-footer">
+                <button class="button outline-button">
+                  <span class="share-icon"></span>
+                  <span>Share</span>
+                </button>
+                <button class="icon-button" data-card="odd-even" aria-label="Favorite">
+                  <span class="heart-icon"></span>
+                </button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <div class="verse-reference" id="day-of-week-verse-reference">Loading...</div>
+                <div class="card-label" id="day-of-week-label"></div>
+              </div>
+              <div class="card-content">
+                <div id="day-of-week-verse">
+                  <div class="spinner" id="day-of-week-spinner"></div>
+                  <blockquote id="day-of-week-verse-content" class="small-verse-text">Loading day-of-week verse...</blockquote>
+                </div>
+              </div>
+              <div class="card-footer">
+                <button class="button outline-button">
+                  <span class="share-icon"></span>
+                  <span>Share</span>
+                </button>
+                <button class="icon-button" data-card="day-of-week" aria-label="Favorite">
+                  <span class="heart-icon"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card main-verse-card">
+            <div class="card-header">
+              <div class="verse-reference" id="verse-reference">Loading...</div>
+              <div class="card-label" id="day-label"></div>
+            </div>
+            <div class="card-content">
+              <div id="verse">
+                <div class="spinner" id="verse-spinner"></div>
+                <p id="track-fallback-message" class="track-fallback-message" aria-live="polite" hidden></p>
+                <blockquote id="verse-content" class="verse-text">Loading...</blockquote>
+              </div>
+              <div id="verse-toggle-buttons" class="verse-toggle-buttons"></div>
+            </div>
+            <div class="card-footer">
+              <button class="button outline-button">
+                <span class="share-icon"></span>
+                <span>Share</span>
+              </button>
+              <button class="icon-button" data-card="day-month" aria-label="Favorite">
+                <span class="heart-icon"></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="navigation-buttons">
+            <button id="prev-day" class="button primary-button">
+              <span class="arrow-left-icon"></span>
+              Previous Day
+            </button>
+            <button id="today" class="button primary-button">Today</button>
+            <button id="next-day" class="button primary-button">
+              Next Day
+              <span class="arrow-right-icon"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container footer-container">
+        <p>© 2025 Sacred Chest Daily Verse App. All rights reserved.</p>
+        <p class="collaboration">Built with<img src="assets/grok-logo.svg" alt="Grok Logo" class="grok-logo"></p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="index.js"></script>
+  
+</body>
+</html>
