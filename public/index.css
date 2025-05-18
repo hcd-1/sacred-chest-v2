@@ -220,7 +220,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--muted-foreground);
+    /* color: var(--muted-foreground); */
   }
 
   .calendar-button {
@@ -470,10 +470,30 @@
     min-width: 4rem;
     font-family: var(--font-sans-secondary);
     border-radius: var(--radius);
+    background-color: transparent !important;
+    color: var(--foreground) !important;
+  
+  }
+
+  button.dropdown-toggle.primary-button {
+    border: 1px solid var(--foreground);
+  }
+
+  .dark .dropdown-toggle {
+    background-color: transparent !important;
   }
 
   .dropdown-toggle.primary-button {
     padding: 0.4rem 0.5rem !important;
+  }
+
+  .dropdown-toggle.primary-button:hover {
+    background-color: #a78bfa !important;
+  }
+
+  .dark .dropdown-toggle.primary-button:hover {
+    background-color: #6d28d9 !important;
+    border: none;
   }
 
   .dropdown-menu {
@@ -511,7 +531,7 @@
   .dropdown-arrow {
     width: 12px;
     height: 12px;
-    background-color: var(--primary-foreground);
+    background-color: var(--foreground);
     -webkit-mask-image: url('assets/chevron-down.svg');
     mask-image: url('assets/chevron-down.svg');
     -webkit-mask-repeat: no-repeat;
@@ -596,11 +616,11 @@
     font-size: 0.875rem;
   }
 
-  .primary-button:hover {
+  .primary-button:hover, .dropdown-toggle:hover {
     background-color: #a78bfa;
   }
 
-  .dark .primary-button:hover {
+  .dark .primary-button:hover, .dark .dropdown-toggle:hover {
     background-color: #6d28d9;
   }
 
@@ -612,26 +632,32 @@
   }
 
   .verse-toggle-buttons .primary-button {
-    background-color: #6d28d9;
+    /* background-color: #6d28d9; */
+    background-color: transparent;
+    color: var(--foreground);
   }
 
   .dark .verse-toggle-buttons .primary-button {
-    background-color: #a78bfa;
+    /* background-color: #a78bfa; */
+    background-color: transparent;
+    color: var(--foreground) !important;
   }
 
   .verse-toggle-buttons .primary-button.active {
     background-color: var(--card);
-    border: 2px solid var(--primary);
+    /* border: 2px solid var(--primary); */
   }
 
   .verse-toggle-buttons .primary-button.active,
   .track-indicator .primary-button.active {
-    background-color: #a78bfa;
+    background-color: #6d28d9;
+    color: var(--card);
   }
 
   .dark .verse-toggle-buttons .primary-button.active,
   .dark .track-indicator .primary-button.active {
-    background-color: #6d28d9;
+    /* background-color: #6d28d9; */
+    background-color: #a78bfa;
   }
 
   .outline-button {
@@ -656,9 +682,9 @@
     background-color: #a78bfa;
   }  
 
-  /* .dark .icon-button:hover, #open-calendar.calendar-button:hover {
+  .dark .icon-button:hover, .dark #open-calendar.calendar-button:hover {
     background-color: #6d28d9;
-  } */
+  }
 
   .heart-icon {
     display: inline-block;

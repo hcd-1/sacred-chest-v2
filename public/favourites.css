@@ -310,6 +310,20 @@
     display: none;
   }
 
+    .home-icon {
+    width: 20px;
+    height: 20px;
+    background-color: var(--foreground);
+    -webkit-mask-image: url('assets/home.svg');
+    mask-image: url('assets/home.svg');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+  }
+
   footer {
     border-top: 1px solid var(--border);
     padding: 1.5rem 0;
@@ -364,15 +378,23 @@
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
-    background-color: var(--primary);
+    /* background-color: var(--primary); */
+    background-color: transparent;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 0.3rem 0.875rem;
     font-size: 0.875rem;
     font-weight: 500;
-    color: var(--primary-foreground);
+    color: var(--foreground);
     font-family: var(--font-sans-secondary);
   }
+
+  .dark .dropdown-toggle {
+    background-color: transparent;
+    color: var(--primary-foreground);
+  }
+
+
 
   .dropdown-toggle:hover {
     background-color: #a78bfa;

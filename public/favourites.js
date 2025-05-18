@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Unfavourite button handlers
-    document.querySelectorAll('.icon-button').forEach(button => {
+    document.querySelectorAll('.favorited').forEach(button => {
       button.addEventListener('click', function () {
         const verseId = parseInt(this.dataset.verseId);
         if (confirm('Are you sure you want to remove this verse from your favourites?')) {
