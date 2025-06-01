@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sacred Chest</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="index.css"> 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fugaz+One:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --background: #ffffff;
+    --foreground: #253146;
+    --muted: #f1f5f9;
+    --muted-foreground: #374151;
+    --border: #e2e8f0;
+    --primary: #6d28d9;
+    --primary-foreground: #ffffff;
+    --card: #ffffff;
+    --card-foreground: #0f172a;
+    --radius: 0.5rem;
+    --font-sans-primary: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    --font-sans-secondary: 'Fugaz One', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    --logo-filter: invert(27%) sepia(20%) saturate(1000%) hue-rotate(190deg) brightness(90%) contrast(90%);
+  }
+
+  .dark {
+    --background: #0f172a;
+    --foreground: #f8fafc;
+    --muted: #334155;
+    --muted-foreground: #94a3b8;
+    --border: #1e293b;
+    --primary: #a78bfa;
+    --primary-foreground: #ffffff;
+    --card: #1e293b;
+    --card-foreground: #f8fafc;
+    --logo-filter: invert(80%) sepia(10%) saturate(500%) hue-rotate(190deg) brightness(100%) contrast(90%);
+  }
+  li {
+    margin-left: 40px;
+  }
+  /* Default paragraph styling */
+  p {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  font-size: 1em;
+  font-weight: normal;
+  line-height: normal;
+  }
+
+  /* Default h2 styling */
+  h2 {
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+  line-height: normal;
+  }
+  a {
+  color: var(--primary); /* Default link color */
+  text-decoration: none;
+    }
+      .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+  }
+  .card-header {
+    padding: 1.5rem;
+  }
+  @media (max-width: 640px) {
+    .card-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .card-footer {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0;
+    }
+    .header-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .header-row > div {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .dropdown-container {
+      width: auto;
+    }
+    .dropdown-toggle {
+      width: auto;
+      justify-content: space-between;
+    }
+  }
+</style> 
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="container header-container">
+        <div class="logo-container">
+          <img src="assets/logo.svg" alt="Sacred Chest Logo" class="logo-img">
+          <div class="logo">Sacred Chest</div>
+        </div>
+        <div class="header-actions">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="sun-icon"></span>
+            <span class="moon-icon"></span>
+          </button>
+          <button id="hamburger-toggle" class="hamburger-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="hamburger-menu">
+            <span class="hamburger-icon">
+              <span></span>
+            </span>
+          </button>
+        </div>
+      </div>
+      <nav id="hamburger-menu" class="hamburger-menu" role="navigation" hidden>
+        <div class="hamburger-menu-content">
+          <div class="track-dropdown">
+            <button class="dropdown-toggle primary-button" aria-expanded="false" aria-label="Select verse track">
+              <span class="dropdown-text">Track 1</span>
+              <span class="dropdown-arrow"></span>
+            </button>
+            <ul class="dropdown-menu" hidden></ul>
+          </div>
+          <a class="icon-button external-link" href="https://sacred-chest-original.netlify.app" target="_blank" rel="noopener" aria-label="Visit other Bible verse app">
+            <span class="external-link-icon"></span>
+          </a>
+          <button class="icon-button settings" disabled aria-label="Settings coming soon" aria-disabled="true">
+            <span class="settings-icon"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="header-row">
+          <h1 style="font-size: 1.5rem;">About Sacred Chest</h1>
+          <div style="display: flex; gap: 1rem; align-items: center;">
+
+            <a href="index.html" class="button primary-button" aria-label="Back to Home">Home</a>
+          </div>
+        </div>
+        <div class="main-grid">
+          <div class="card main-verse-card">
+            <div class="card-header">
+              <div>
+                  <h2>Scripture Memory System Summary</h2>
+                      <p>This system provides a structured approach for families to memorize and retain Scripture through daily practice requiring just 5-10 minutes per day.</p>
+                  <h2>Core Method</h2>
+                      <p>Read Scripture passages aloud daily until everyone can confidently recite them together. There is no rush or time pressure - focus on developing a lifelong habit. Works for both short verses and longer passages.</p>
+                  <h2>How it works</h2>
+                      <p>Daily Practice - Each day, recite four sets of verses:</p> 
+                      <ul>
+                        <li>Daily Verse</li>
+                        <li>Odd/Even Verse</li>
+                        <li>Day of the Week Verse</li>
+                        <li>Date of the Month Verse</li>
+                      </ul>
+                      <p>Advancement System - As verses are mastered, they move through a progression:</p>
+                      <ul>
+                        <li>Daily → Odd/Even → Day of Week → Numbered Date</li>
+                      </ul>
+                        <p>This creates a systematic review cycle (daily → every other day → weekly → monthly)</p>
+                  <h2>Key Benefits</h2>
+                  <ul>
+                    <li>Accommodates all family members regardless of age</li>
+                    <li>Allows for mixture of translations and passage lengths</li>
+                    <li>Focuses on meaningful, character-building Scripture selections</li>
+                    <li>Scales to accommodate hundreds of verses</li>
+                  </ul> 
+                  <p>This systematic approach ensures regular review and reinforcement, helping families retain Scripture long-term while continually adding new passages.</p>
+                  <p>For more information, visit <a href="https://simplycharlottemason.com/timesavers/memorysys/" target="_blank" rel="noopener">Simply Charlotte Mason - Bible Memory System</a>.</p>
+                  <h2>App Features</h2>
+                  <ol>
+                    <li>Interactive Calendar and Navigation - The app’s calendar and navigation buttons let you easily explore Bible verses for any date, making it simple to revisit or preview verses for memorization.</li>
+                    <li>Favourites System - You can save favourite verses with a heart icon, creating a personal collection to review and memorize at your own pace.</li>
+                    <li>Track Selection for Day-of-Month Verses - Choose from different verse tracks for each day of the month, allowing you to focus on a specific set or mix it up for diverse memorization.</li>
+                    <li>Share Functionality - Share verses effortlessly with friends or family through a single click, enhancing memorization through discussion and engagement.</li>
+                    <li>Sorting Options for Favourites - Sort your favourite verses in various ways, like by date or randomly, to keep your memorization practice fresh and engaging.</li>
+                  </ol>
+              </div>
+            </div>
+
+
+          </div>
+
+
+
+          <!-- <div class="card main-verse-card">
+
+            <div class="card-content">
+              <h2>Some App Features</h2>
+                  <ol>
+                    <li>Interactive Calendar and Navigation - The app’s calendar and navigation buttons let you easily explore Bible verses for any date, making it simple to revisit or preview verses for memorization.</li>
+                    <li>Favourites System - You can save favourite verses with a heart icon, creating a personal collection to review and memorize at your own pace.</li>
+                    <li>Track Selection for Day-of-Month Verses - Choose from different verse tracks for each day of the month, allowing you to focus on a specific set or mix it up for diverse memorization.</li>
+                    <li>Share Functionality - Share verses effortlessly with friends or family through a single click, enhancing memorization through discussion and engagement.</li>
+                    <li>Sorting Options for Favourites - Sort your favourite verses in various ways, like by date or randomly, to keep your memorization practice fresh and engaging.</li>
+                  </ol>
+            </div>
+
+          </div> -->
+
+
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container footer-container">
+        <p>© 2025 Sacred Chest Daily Verse App. All rights reserved.</p>
+        <p class="collaboration">Built with<img src="assets/grok-logo.svg" alt="Grok Logo" class="grok-logo"></p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="index.js"></script>
+  
+</body>
+</html>
